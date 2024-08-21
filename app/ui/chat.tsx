@@ -4,7 +4,7 @@ export default function Chat({ messageHistory }: { messageHistory: CoreMessage[]
 
 return (<div>
 {messageHistory.map(function(object, i){
-        return <p>{object.content.toString()}</p>;
+        return <p key={i}>{object.content.toString()}</p>;
     })}
 </div>)
 }
