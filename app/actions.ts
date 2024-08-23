@@ -1,6 +1,6 @@
 'use server';
 
-import { CoreSystemMessage, CoreMessage, generateText } from 'ai';
+import { CoreMessage, generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
 export async function getAnswer(messagesInput : CoreMessage[]) {

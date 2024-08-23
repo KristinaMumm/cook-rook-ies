@@ -2,15 +2,14 @@
 
 import { useState, useEffect } from 'react';
 import { getAnswer } from './actions';
-import { useDebouncedCallback } from 'use-debounce';
-import { CoreSystemMessage, CoreMessage, convertToCoreMessages } from 'ai';
+import { CoreMessage } from 'ai';
 import Chat from './ui/chat';
+import InputForm from './ui/input-form';
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
 
 export default function Page() {
-  const [userMessage, setUserMessage] = useState<string>('');
   const [messageHistory, setMessageHistory] = useState<CoreMessage[]>([])
 
   const addMessageInput = (newMessage : string, currentRole : string) => {
@@ -34,8 +33,6 @@ export default function Page() {
     const performAsyncAction = async () => {
       if (messageHistory.length > 0) {
       
-        // This action will be executed every time messageHistory is updated
-        console.log('Message history updated:', messageHistory);
         if (messageHistory[messageHistory.length-1].role == 'user')  {
           console.log(messageHistory[messageHistory.length-1].content);
           const { text } = await getAnswer(messageHistory);
@@ -51,31 +48,19 @@ export default function Page() {
 
   return (
     <body>
-      <div className='h-screen flex flex-col  
-                    items-center justify-center'>
-        <form>
-          <div>
-            <label>
-              Enter text
-            </label>
-            <div>
-              <input value={userMessage} type="text" onChange={e => { setUserMessage(e.currentTarget.value); }} 
-              className='border pb-12'/>
-            </div>
-          </div>
-        </form>
-        <button
-          onClick={async () => {
-            addMessageInput(userMessage, 'user')
-            setUserMessage('');
-          }}
-        >
-          Answer
-        </button>
-        <div>
-          <Chat messageHistory={messageHistory}/>
+      <section className='flex justify-center items-center w-full h-screen content-center'>
+
+      <div className='p-2 flex-col border-8 w-3/5 h-3/4 bg-lime-800'>
+        <div className='h-5/6'>
+        <Chat messageHistory={messageHistory}/>
+        </div>
+        <div className='flex justify-center items-center h-1/6'>
+        <InputForm addMessageInput={addMessageInput}/>
         </div>
       </div>
+
+      </section>
+      
     </body>
     
   );
