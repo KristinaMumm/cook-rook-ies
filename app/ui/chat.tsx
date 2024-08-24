@@ -9,7 +9,7 @@ export default function Chat({ messageHistory }: { messageHistory: CoreMessage[]
                           
               return (
                 <div className="flex m-4  justify-end">
-                  <div className="flex justify-end max-w-[75%] p-4 bg-[#A07254] rounded-lg rounded-es-xl">
+                  <div className="flex justify-end max-w-[75%] p-4 bg-[#92654F] rounded-lg rounded-es-xl">
                     <p className="text-stone-100 " key={index}>{message.content.toString()}</p>
                   </div>
                 </div>

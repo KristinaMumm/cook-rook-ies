@@ -6,6 +6,7 @@ import { CoreMessage } from 'ai';
 import Chat from './ui/chat';
 import InputForm from './ui/input-form';
 import logo from '../pics/logo.png'
+import Image from 'next/image';
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
@@ -51,7 +52,7 @@ export default function Page() {
     <body>
       <section className='flex flex-col items-center w-full h-screen content-center bg-[#EADED7]'>
         <div className='flex justify-center items-center h-fit w-full'>
-          <img src={logo.src} className='items-center' alt="cook-rook-ies logo"/> 
+          <Image src={logo.src} className='items-center' alt="cook-rook-ies logo"/> 
         </div> 
         <div className='flex justify-center items-center w-full content-center bg-[#EADED7] h-full'>
         <div className='p-2 flex-col border-8 border-[#6B4B38] rounded-lg w-3/5 h-5/6 bg-[#B99179]'>
