@@ -4,7 +4,7 @@ Eesmärk oli teha lihtne juturobot, kus kasutaja saaks vestelda AI-ga. Ülesande
 
 ## Arenduse käik
 ### Koodi struktuur
-Esmalt tegin endale skeemi valmis:
+Esmalt tegin endale skeemi valmis, et näha, kuidas võiks lõplik rakendus välja näha:
 ![Skeem](readme_files/page_schema.png)
 
 Seejärel hakkasin seda teostama. Esmalt oli tähtis asi tööle saada ja seejärel jagasin koodi väiksematesse failidesse. Nii on lihtsam erinevaid veebilehekülje osasid hallata, kui kood on võimalikult lühike ja funktsionaalsus on vaid ühe olulisema kasti kohta.
@@ -13,7 +13,7 @@ Kõige olulisem oli minu jaoks, et oleks ära eraldatud juturoboti päringute lo
 
 Nii kujuneski välja, et `app` kaustas on AI poole päringu tegemise fail `ai_actions.ts` ja UI peafail `page.tsx`. Kaustas `app\ui` on kaks suuremat kasti: päis ja vestlus ise. Kaustas `app\ui\chat-box-elements` on vestluse kastiga seotud komponendid.
 
-Ainuke asi, mis jäi kriipima, on fail app/ui/chat-box.tsx. Võib-olla saaks sealt ka funktsioonid välja tõmmata eraldi faili, kuigi kuna fail ise pole praegu pikk.
+Ainuke asi, mis jäi kriipima, on fail app/ui/chat-box.tsx. Võib-olla saaks sealt ka funktsioonid välja tõmmata eraldi faili.
 
 Pole harjunud koodi kommenteerima. Pigem kasutan kirjeldavaid funktsioonide/muutujate nimesid.
 
