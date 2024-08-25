@@ -1,6 +1,6 @@
 # cook-rook-ies
 
-Eesmärk oli teha lihtne juturobot, kus kasutaja saaks vestelda AI-ga. Ülesande jaoks kitsendasin teemat: teha juturobot retseptide genereerimiseks. Kuigi juturobot ei ole sptesialiseerunud ainult kokandusele, aitas see kitsendus paremini erinevaid ideid kujunduse osas genereerida. Minu jaoks kokkamine seostub soojade pruunide värvidega nagu küpsis šokolaaditükkidega või ahjus küpsetatud kana.
+Eesmärk oli teha lihtne juturobot, kus kasutaja saaks vestelda AI-ga. Ülesande jaoks kitsendasin teemat: teha juturobot retseptide genereerimiseks. Kuigi juturobot ei ole sptesialiseerunud ainult kokandusele, aitas see kitsendus paremini erinevaid ideid kujunduse osas genereerida.
 
 ## Arenduse käik
 ### Koodi struktuur
@@ -29,6 +29,10 @@ Mõned punktid, mis teevad lehekülje kasutajasõbralikuks:
 
 ### Disain
 
+Värve valisin järgneva lingi abil: https://coolors.co/cbac88-644536-eaded7-5c9ead-326273
+
+Minu jaoks kokkamine seostub soojade pruunide värvidega nagu küpsis šokolaaditükkidega või ahjus küpsetatud kana, seepärast on rakendus ka sellistes toonides.
+
 Varasemalt olen ainult puhast CSS-i kasutanud, siin aga kasutasin Tailwindi, et proovida midagi uut. Olen seda teistel näinud ja kuulnud, et väga kerge on kasutada. Tõesti oli palju lihtsam, kui eraldi .css failis seda teha. Eraldi .css failis oleksin tõenäoliselt proovinud kõike üldistada ja rohkem sattunud probleemide otsa. Tailwindi kasutades oli mul kerge keskenduda iga komponendi kujundusele eraldi. Küll tekitas küsimusi, et mis on head tavad Tailwindiga. Kindlasti peaks kuhugi ära kirjeldama erinevad värvid, mida ma hetkel olen lihtsalt igale poole hard-codenud komponentidesse. Muid asju praegu targema soovituseta ei oskaks koondada eraldi faili.
 
 ### Testplaan
@@ -51,7 +55,7 @@ Keha testimine - siin teeksin palju erinevaid pisemaid. Kuna ise pole arenduses 
 ### Ohud
 
 *  Kui AI genereerib pikemat teksti, siis ei tea kasutaja, kas kõik on ikka korras või tuli mingi error, kuna praegu ei anta teada, et kasutaja peaks veidi ootama. Lahendamiseks on 2 võimalust: tekitada kolmepunktiline jutumull AI poolele tähistamiseks, et näidata AI mõtlemist, või siis kasutada päringut, mis striimiks AI poolt genereeritavat teksti, et tekiks mulje nagu AI otse kirjutab, nagu praegu ChatGPT puhul.
-*  Ma ei tea, kui hästi on valitud värvid värvipimedate jaoks. Seda peaks üle vaatama ja vajadusel värvid ära vahetama. Esmalt valisin sellised värvid välja, aga ei leidnud võimalust, kuidas võiks siniseid värve juurde lisada. https://coolors.co/cbac88-644536-eaded7-5c9ead-326273
+*  Ma ei tea, kui hästi on valitud värvid värvipimedate jaoks. Seda peaks üle vaatama ja vajadusel värvid ära vahetama. Esmalt valisin sellised värvid välja, aga ei leidnud võimalust, kuidas võiks siniseid värve juurde lisada. 
 *  Ei testinud, kui hea veebilehekülg on vaegnägijatele ehk kui kerge on neil liigelda veebileheküljel kasutades abirakendusi.
 *  Ei ole testinud volditava telefoniga.
 *  Koodi on ingliskeelsed tekstid hard-codetud. Need tekstid võiks kuhugi eraldi faili panna, et vajadusel oleks kerge üles leida kõik tekstid ja vajadusel neid korrigeerida.
