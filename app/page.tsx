@@ -52,7 +52,7 @@ export default function Page() {
     <body>
       <section className='flex flex-col items-center w-full h-screen content-center bg-[#EADED7]'>
         <div className='flex justify-center items-center w-2/6'>
-          <Image src={logo.src} className='items-center' alt="cook-rook-ies logo" width={0} height={0} sizes="100vw" style={{ width: '100%', height: '100%' }}/> 
+          <Image src={logo.src} className='items-center' alt="cook-rook-ies logo" width={0} height={0} layout="responsive"/> 
         </div> 
         <div className='flex justify-center items-center w-full content-center bg-[#EADED7] h-full'>
         <div className='p-2 flex-col border-8 border-[#6B4B38] rounded-lg w-3/5 h-5/6 bg-[#B99179]'>
