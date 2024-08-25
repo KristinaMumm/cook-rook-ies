@@ -30,7 +30,7 @@ const InputForm: React.FC<InputFormProps> = ({ addMessageInput }) => {
           <input type="text" value={userMessage} onKeyDown={onEnterPress} 
             onChange={event => { setUserMessage(event.currentTarget.value); }} className='border w-full m-1 p-2 resize-none bg-[#EADED7]'/>
           <button type="submit" className='bg-[#6B4B38] hover:bg-blue-700 m-1 p-2 w-32 text-white font-bold rounded'>
-            Saada
+            Send
           </button>
         </form>
       </div>
