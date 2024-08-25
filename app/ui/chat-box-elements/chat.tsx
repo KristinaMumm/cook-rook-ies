@@ -21,9 +21,10 @@ export default function Chat({ messageHistory }: { messageHistory: CoreMessage[]
     )
 
   }
+  
 
   return (
-    <div className="flex flex-col-reverse max-h-full flex-col overflow-y-auto">
+    <div className="flex flex-col max-h-full overflow-y-auto">
       {messageHistory.reverse().map((message, index) => {
         if (message.role == 'user') {
                           

@@ -7,7 +7,7 @@ import InputForm from './chat-box-elements/input-form';
 export default function ChatBox() {
     const [messageHistory, setMessageHistory] = useState<CoreMessage[]>([]);
 
-    const addMessageInput = (newMessage : string, currentRole : string) => {
+    function addMessageInput (newMessage : string, currentRole : string) {
         let newMessageObject : CoreMessage;
         if (currentRole == 'user') {
           newMessageObject = {
@@ -20,9 +20,8 @@ export default function ChatBox() {
             content: newMessage,
           }
         }
-        
+
         setMessageHistory(result => [...result, newMessageObject]);
-        
       }
     
       useEffect(() => {
@@ -32,15 +31,16 @@ export default function ChatBox() {
               addMessageInput(text, 'assistant')   
           }
         }
-        
+
         performAsyncAction();
+
       }, [messageHistory]);
     
     return(
       <div className='flex justify-center items-center w-full content-center bg-[#EADED7] h-full'>
         <div className='p-2 flex-col border-8 border-[#6B4B38] rounded-lg w-4/5 md:w-3/5 h-5/6 bg-[#B99179]'>
           <div className='h-5/6'>
-            <Chat messageHistory={messageHistory}/>
+            <Chat messageHistory={messageHistory.map(object => ({...object}))}/>
           </div>
           <div className='flex justify-center items-center h-1/6'>
             <InputForm addMessageInput={addMessageInput}/>
