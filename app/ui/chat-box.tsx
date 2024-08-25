@@ -22,16 +22,14 @@ export default function ChatBox() {
         }
         
         setMessageHistory(result => [...result, newMessageObject]);
+        
       }
     
       useEffect(() => {
         const performAsyncAction = async () => {
-          if (messageHistory.length > 0) {
-          
-            if (messageHistory[messageHistory.length-1].role == 'user')  {
+          if (messageHistory.length > 0 && messageHistory[messageHistory.length-1].role == 'user') {
               const { text } = await getAnswer(messageHistory);
               addMessageInput(text, 'assistant')   
-            }
           }
         }
         
