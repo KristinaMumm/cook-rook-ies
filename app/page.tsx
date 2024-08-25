@@ -4,9 +4,6 @@ import Header from './ui/header';
 import ChatBox from './ui/chat-box';
 
 
-// Allow streaming responses up to 30 seconds
-export const maxDuration = 30;
-
 export default function Page() {
   
   return (

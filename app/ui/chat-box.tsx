@@ -42,7 +42,7 @@ export default function ChatBox() {
       }, [messageHistory]);
     
     return(
-        <div className='flex justify-center items-center w-full content-center bg-[#EADED7] h-full'>
+      <div className='flex justify-center items-center w-full content-center bg-[#EADED7] h-full'>
         <div className='p-2 flex-col border-8 border-[#6B4B38] rounded-lg w-4/5 md:w-3/5 h-5/6 bg-[#B99179]'>
           <div className='h-5/6'>
             <Chat messageHistory={messageHistory}/>
@@ -51,6 +51,6 @@ export default function ChatBox() {
             <InputForm addMessageInput={addMessageInput}/>
           </div>
         </div>
-        </div>
+      </div>
     )
 }
