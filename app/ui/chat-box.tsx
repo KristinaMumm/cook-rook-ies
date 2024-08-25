@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getAnswer } from '../actions';
+import { getAnswer } from '../ai_actions';
 import { CoreMessage } from 'ai';
 import Chat from './chat-box-elements/chat';
 import InputForm from './chat-box-elements/input-form';
@@ -29,11 +29,8 @@ export default function ChatBox() {
           if (messageHistory.length > 0) {
           
             if (messageHistory[messageHistory.length-1].role == 'user')  {
-              console.log(messageHistory[messageHistory.length-1].content);
               const { text } = await getAnswer(messageHistory);
               addMessageInput(text, 'assistant')   
-            } else {
-              console.log(messageHistory[messageHistory.length-1].content);
             }
           }
         }
